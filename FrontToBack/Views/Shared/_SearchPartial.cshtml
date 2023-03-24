@@ -1,0 +1,11 @@
+﻿@model List<Product>
+
+@foreach (var item in Model)
+{
+    <li class="d-flex px-3">
+        <a href="/product/detail/@item.Id"> @item.Name </a> @*asp-controller="product" asp-action="detail" asp-route="@item.Id"*@
+    </li>
+}
+
+
+@* ------ Tag helper not working. Only need to href -------- *@

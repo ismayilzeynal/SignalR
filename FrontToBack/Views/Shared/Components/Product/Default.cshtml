@@ -1,0 +1,26 @@
+﻿@model List<Product>
+
+@foreach (var item in Model)
+{
+    <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
+        <div class="product-item text-center" data-id="@item.Category.Name.ToLower()">
+            <div class="img">
+                <a href="">
+                    @if (item.ProductImages.Count > 0)
+                    {
+                        <img src="~/img/@item.ProductImages.FirstOrDefault().ImageUrl" class="img-fluid" alt="">
+                    }
+                </a>
+            </div>
+            <div class="title mt-3">
+                <h6>@item.Name</h6>
+            </div>
+            <div class="price">
+                <a asp-controller="basket" asp-action="add" asp-route-id="@item.Id" asp-route-name="@item.Name">
+                    <span class="text-black-50">Add to cart</span>
+                </a>
+                <span class="text-black-50">$@item.Price</span>
+            </div>
+        </div>
+    </div>
+}

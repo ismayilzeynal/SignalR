@@ -1,0 +1,33 @@
+﻿@model SliderCreateVM
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Default form</h4>
+                <p class="card-description">
+                    Create Slider Form
+                </p>
+                <form method="post" class="forms-sample" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label asp-for="Photo">Name</label>
+                        <input asp-for="Photo" class="form-control" placeholder="Name">
+                        <span class="text-danger" asp-validation-for="Photo"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mr-2" id="submitFormCategory">Submit</button>
+                    <button class="btn btn-light">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationPartial"></partial>
+}

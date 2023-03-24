@@ -1,0 +1,26 @@
+﻿@model UserDetailVM
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="container">
+    <h2>Detail</h2>
+    <div class="row">
+        <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">@Model.User.Fullname</h4>
+                    <p>
+                        @Model.User.UserName
+                    </p>
+                    @foreach (var item in Model.UserRoles)
+                    {
+                        <p>@item</p>
+                    }
+                    <a asp-action="Index" class="btn btn-dark">Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,84 @@
+﻿@model List<BasketVM>
+
+@{
+    ViewData["Title"] = "ShowBasket";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    double totalPrice = Model.Sum(p=>p.Price*p.BasketCount);
+}
+@if(TempData["Success"]!=null)
+{
+    <div class="row justify-content-center">
+        <div class="alert alert-success col-lg-4" id="successMesage">
+            @TempData["Success"]
+        </div>
+    </div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="row justify-content-center">
+        <div class="alert alert-danger col-lg-4" id="successMesage">
+            @TempData["Error"]
+        </div>
+    </div>
+}
+
+@*TempData["Error"]*@
+
+
+<div class="container">
+    @if(Model.Count>0)
+    {
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Image</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Count</th>
+                        <th scope="col">Settings</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <th>
+                                <img src="~/img/@item.ImageUrl" width="100" height="100" />
+                            </th>
+                            <td>@item.Name</td>
+                            <td>@item.Price</td>
+                            <td>@item.BasketCount</td>
+                            <td>Delete</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+        <div class="row justify-content-center">
+            <p>Total Price: @totalPrice</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <form asp-action="Sale" method="post">
+
+                <button type="submit"> Buy </button>
+            </form>
+        </div>
+    }
+    else
+    {
+        <div class="row justify-content-center" >
+            <a asp-controller="home" asp-action="index">Go To Home</a>
+        </div>
+    }
+</div>
+
+<script>
+    setTimeout(function()
+    {
+        document.getElementById("successMesage").remove();
+    },3500);
+</script>

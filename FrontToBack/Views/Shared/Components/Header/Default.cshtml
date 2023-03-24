@@ -1,0 +1,269 @@
+﻿@model Bio
+@using FrontToBack.Services.Basket
+@*@inject IBasketProductCount _basketProductCount*@
+@*@{
+    int result = _basketProductCount.CalculateBasketProductCount();
+}*@
+
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-lg d-flex d-lg-block justify-content-between d-xl-flex navbar-light py-3 py-lg-0">
+                    <a class="navbar-brand" href="#">
+                        <img src="~/img/@Model.ImageUrl" alt="" id="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation" id="mobile-navbar-show">
+                        <span class="navbar-toggler-icon" style="font-size: 12px;"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse d-none d-lg-block" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Home</a>
+                                <ul class="list-unstyled py-3">
+                                    <li class=""><a class="px-1" href="">Home 1</a></li>
+                                    <li class=""><a class="px-1" href="">Home 2</a></li>
+                                    <li class=""><a class="px-1" href="">Home 3</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="product" asp-action="index">PRODUCT</a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="blog" asp-action="index">BLOG</a>
+                            </li>
+                            <li class="nav-item shop-li">
+                                <a class="nav-link" href="#">Shop</a>
+                                <div class="container">
+                                    <div class="row shop py-5">
+                                        <div class="col-lg-3">
+                                            <div class="item px-4">
+                                                <h5>Product Types</h5>
+                                                <ul class="list-unstyled py-3">
+                                                    <li class=""><a class="px-3" href="">Product Types 1</a></li>
+                                                    <li class=""><a class="px-3" href="">Product Types 2</a></li>
+                                                    <li class=""><a class="px-3" href="">Product Types 3</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="item px-4">
+                                                <h5>Shop Pages</h5>
+                                                <ul class="list-unstyled py-3">
+                                                    <li class=""><a class="px-3" href="">Shop Pages 1</a></li>
+                                                    <li class=""><a class="px-3" href="">Shop Pages 2</a></li>
+                                                    <li class=""><a class="px-3" href="">Shop Pages 3</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="item px-4">
+                                                <h5>Shop Types</h5>
+                                                <ul class="list-unstyled py-3">
+                                                    <li class=""><a class="px-3" href="">Shop Types 1</a></li>
+                                                    <li class=""><a class="px-3" href="">Shop Types 2</a></li>
+                                                    <li class=""><a class="px-3" href="">Shop Types 3</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="item px-4">
+                                                <h5>Shop Layouts</h5>
+                                                <ul class="list-unstyled py-3">
+                                                    <li class=""><a class="px-3" href="">Shop Layouts 1</a></li>
+                                                    <li class=""><a class="px-3" href="">Shop Layouts 2</a></li>
+                                                    <li class=""><a class="px-3" href="">Shop Layouts 3</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                @if(User.Identity.IsAuthenticated)
+                                {
+                                    if(User.IsInRole("Admin"))
+                                    {
+                                        <a class="nav-link" asp-area="adminarea" asp-controller="dashboard">Admin</a>
+                                    }
+                                }
+                                
+                                
+                            </li>
+                            <li class="nav-item">
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <a class="nav-link">@ViewBag.FullName</a>
+                                }
+                            </li>
+                            <li class="nav-item">
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <a asp-controller="account" asp-action="logout" class="nav-link">LogOut</a>
+                                }
+                                else
+                                {
+                                    <a asp-controller="account" asp-action="login" class="nav-link">Login</a>
+                                }
+                            </li>
+
+                            <li class="nav-item my-auto search">
+                                <i class="fas fa-search" id="search"></i>
+                                <ul id="searchList" class="list-unstyled py-3">
+                                    <li class="d-flex px-3">
+                                        <input id="input-search" type="text" placeholder="Search">
+                                        <i class="fas fa-search my-auto" id="search"></i>
+                                    </li>
+
+
+                                </ul>
+                            </li>
+                            <li class="nav-item my-auto shop-cart">
+                                <a asp-controller="basket" asp-action="showbasket">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </a>
+                                @*<sup class="rounded-circle">@result</sup>*@
+                                <sup class="rounded-circle">@ViewBag.BasketProductCount</sup>
+                                <span>CART ($0)</span>
+                                <ul class="list-unstyled py-3">
+                                    <li class="">No products in the cart.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                </nav>
+            </div>
+        </div>
+        <div class="mobile-navbar position-absolute shadow-lg h-100 p-5">
+            <i class="fas fa-times fa-lg" id="mobile-navbar-close"></i>
+            <ul class="list-unstyled">
+                <li><a href="#">Home <i class="fas fa-caret-right fa-sm"></i></a></li>
+                <ul class="list-unstyled">
+                    <li class=""><a class="px-1" href="">Home 1</a></li>
+                    <li class=""><a class="px-1" href="">Home 2</a></li>
+                    <li class=""><a class="px-1" href="">Home 3</a></li>
+                </ul>
+                <li><a href="#">Pages <i class="fas fa-caret-right fa-sm"></i></a></li>
+                <ul class="list-unstyled">
+                    <li class=""><a class="px-1" href="">Page 1</a></li>
+                    <li class=""><a class="px-1" href="">Page 2</a></li>
+                    <li class=""><a class="px-1" href="">Page 3</a></li>
+                </ul>
+                <li><a href="#">Shop <i class="fas fa-caret-right fa-sm"></i></a></a></li>
+                <ul class="list-unstyled py-3">
+                    <li class="">
+                        <a class="px-3" href="#">PRODUCT TYPES <i class="fas fa-caret-right fa-sm"></i></a>
+                    </li>
+                    <ul class="list-unstyled py-3">
+                        <li class=""><a class="px-3" href="">Product Types 1</a></li>
+                        <li class=""><a class="px-3" href="">Product Types 2</a></li>
+                        <li class=""><a class="px-3" href="">Product Types 3</a></li>
+                    </ul>
+                    <li class="">
+                        <a class="px-3" href="#">SHOP PAGES <i class="fas fa-caret-right fa-sm"></i></a>
+                    </li>
+                    <ul class="list-unstyled py-3">
+                        <li class=""><a class="px-3" href="">Product Types 1</a></li>
+                        <li class=""><a class="px-3" href="">Product Types 2</a></li>
+                        <li class=""><a class="px-3" href="">Product Types 3</a></li>
+                    </ul>
+                    <li class="">
+                        <a class="px-3" href="#">SHOP TYPES <i class="fas fa-caret-right fa-sm"></i></a>
+                    </li>
+                    <ul class="list-unstyled py-3">
+                        <li class=""><a class="px-3" href="">Product Types 1</a></li>
+                        <li class=""><a class="px-3" href="">Product Types 2</a></li>
+                        <li class=""><a class="px-3" href="">Product Types 3</a></li>
+                    </ul>
+                </ul>
+                <li><a href="#">Portfolio <i class="fas fa-caret-right fa-sm"></i></a></a></li>
+                <ul class="list-unstyled py-3">
+                    <li class="">
+                        <a class="px-3" href="#">PRODUCT TYPES <i class="fas fa-caret-right fa-sm"></i></a>
+                    </li>
+                    <ul class="list-unstyled py-3">
+                        <li class=""><a class="px-3" href="">Product Types 1</a></li>
+                        <li class=""><a class="px-3" href="">Product Types 2</a></li>
+                        <li class=""><a class="px-3" href="">Product Types 3</a></li>
+                    </ul>
+                    <li class="">
+                        <a class="px-3" href="#">SHOP PAGES <i class="fas fa-caret-right fa-sm"></i></a>
+                    </li>
+                    <ul class="list-unstyled py-3">
+                        <li class=""><a class="px-3" href="">Product Types 1</a></li>
+                        <li class=""><a class="px-3" href="">Product Types 2</a></li>
+                        <li class=""><a class="px-3" href="">Product Types 3</a></li>
+                    </ul>
+                    <li class="">
+                        <a class="px-3" href="#">SHOP TYPES <i class="fas fa-caret-right fa-sm"></i></a>
+                    </li>
+                    <ul class="list-unstyled py-3">
+                        <li class=""><a class="px-3" href="">Product Types 1</a></li>
+                        <li class=""><a class="px-3" href="">Product Types 2</a></li>
+                        <li class=""><a class="px-3" href="">Product Types 3</a></li>
+                    </ul>
+                </ul>
+                <li><a href="#">Blog <i class="fas fa-caret-right fa-sm"></i></a></a></li>
+                <ul class="list-unstyled py-3">
+                    <li class="">
+                        <a class="px-3" href="#">PRODUCT TYPES <i class="fas fa-caret-right fa-sm"></i></a>
+                    </li>
+                    <ul class="list-unstyled py-3">
+                        <li class=""><a class="px-3" href="">Product Types 1</a></li>
+                        <li class=""><a class="px-3" href="">Product Types 2</a></li>
+                        <li class=""><a class="px-3" href="">Product Types 3</a></li>
+                    </ul>
+                    <li class="">
+                        <a class="px-3" href="#">SHOP PAGES <i class="fas fa-caret-right fa-sm"></i></a>
+                    </li>
+                    <ul class="list-unstyled py-3">
+                        <li class=""><a class="px-3" href="">Product Types 1</a></li>
+                        <li class=""><a class="px-3" href="">Product Types 2</a></li>
+                        <li class=""><a class="px-3" href="">Product Types 3</a></li>
+                    </ul>
+                    <li class="">
+                        <a class="px-3" href="#">SHOP TYPES <i class="fas fa-caret-right fa-sm"></i></a>
+                    </li>
+                    <ul class="list-unstyled py-3">
+                        <li class=""><a class="px-3" href="">Product Types 1</a></li>
+                        <li class=""><a class="px-3" href="">Product Types 2</a></li>
+                        <li class=""><a class="px-3" href="">Product Types 3</a></li>
+                    </ul>
+                </ul>
+                <li><a href="#">Elements <i class="fas fa-caret-right fa-sm"></i></a></a></li>
+                <ul class="list-unstyled py-3">
+                    <li class="">
+                        <a class="px-3" href="#">PRODUCT TYPES <i class="fas fa-caret-right fa-sm"></i></a>
+                    </li>
+                    <ul class="list-unstyled py-3">
+                        <li class=""><a class="px-3" href="">Product Types 1</a></li>
+                        <li class=""><a class="px-3" href="">Product Types 2</a></li>
+                        <li class=""><a class="px-3" href="">Product Types 3</a></li>
+                    </ul>
+                    <li class="">
+                        <a class="px-3" href="#">SHOP PAGES <i class="fas fa-caret-right fa-sm"></i></a>
+                    </li>
+                    <ul class="list-unstyled py-3">
+                        <li class=""><a class="px-3" href="">Product Types 1</a></li>
+                        <li class=""><a class="px-3" href="">Product Types 2</a></li>
+                        <li class=""><a class="px-3" href="">Product Types 3</a></li>
+                    </ul>
+                    <li class="">
+                        <a class="px-3" href="#">SHOP TYPES <i class="fas fa-caret-right fa-sm"></i></a>
+                    </li>
+                    <ul class="list-unstyled py-3">
+                        <li class=""><a class="px-3" href="">Product Types 1</a></li>
+                        <li class=""><a class="px-3" href="">Product Types 2</a></li>
+                        <li class=""><a class="px-3" href="">Product Types 3</a></li>
+                    </ul>
+                </ul>
+            </ul>
+        </div>
+    </div>
+
+</header>

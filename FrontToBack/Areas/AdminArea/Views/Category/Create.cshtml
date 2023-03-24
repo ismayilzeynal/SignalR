@@ -1,0 +1,38 @@
+﻿@model CategoryCreateVM
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Default form</h4>
+                <p class="card-description">
+                    Create Category Form
+                </p>
+                <form method="post" class="forms-sample">
+                    <div class="form-group">
+                        <label asp-for="Name">Name</label>
+                        <input asp-for="Name" class="form-control" placeholder="Name">
+                        <span class="text-danger" asp-validation-for="Name"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Description">Description</label>
+                        <input asp-for="Description" class="form-control" placeholder="Description">
+                        <span class="text-danger" asp-validation-for="Description"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mr-2" id="submitFormCategory">Submit</button>
+                    <button class="btn btn-light">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationPartial"></partial>
+}
