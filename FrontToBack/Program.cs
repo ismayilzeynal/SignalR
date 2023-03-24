@@ -1,5 +1,6 @@
 using FrontToBack;
 using FrontToBack.DAL;
+using FrontToBack.Hubs;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,9 @@ builder.Services.AddSession(options =>
 {
     options.IdleTimeout=TimeSpan.FromSeconds(15);
 });
+
+builder.Services.AddSignalR();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -43,5 +47,8 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapHub<ChatHub>("/chat");
+
 
 app.Run();

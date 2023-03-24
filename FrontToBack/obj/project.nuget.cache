@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "18VvyiRzQNuUKxC6rFr9AiiTaaOg+hd+h5nuJuOu4DpZ9KW0Xi4WKp3BKlh7Rl5xaegGyYuIqk87mRrQmb+7Gw==",
+  "dgSpecHash": "JxEff71isY9J8H9R5++3ASjSazw71pXJMI5DIdmK1VDfD+5192jhsyZ6pdNML0qpkwEnbSpXLp5kAmtqElAAjg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\asus\\OneDrive\\Desktop\\Code Academy\\Backend\\Task-15 Email\\FrontToBack\\FrontToBack\\FrontToBack.csproj",
+  "projectFilePath": "C:\\Users\\asus\\OneDrive\\Desktop\\Code Academy\\Backend\\Task-16 SignalR\\FrontToBack\\FrontToBack\\FrontToBack.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\asus\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\mailkit\\3.6.0\\mailkit.3.6.0.nupkg.sha512",

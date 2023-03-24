@@ -9,165 +9,165 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FrontToBack
 build_property.RootNamespace = FrontToBack
-build_property.ProjectDir = C:\Users\asus\OneDrive\Desktop\Code Academy\Backend\Task-15 Email\FrontToBack\FrontToBack\
+build_property.ProjectDir = C:\Users\asus\OneDrive\Desktop\Code Academy\Backend\Task-16 SignalR\FrontToBack\FrontToBack\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\asus\OneDrive\Desktop\Code Academy\Backend\Task-15 Email\FrontToBack\FrontToBack
+build_property.MSBuildProjectDirectory = C:\Users\asus\OneDrive\Desktop\Code Academy\Backend\Task-16 SignalR\FrontToBack\FrontToBack
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Areas/AdminArea/Views/Category/Create.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Areas/AdminArea/Views/Category/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXENhdGVnb3J5XENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Areas/AdminArea/Views/Category/Detail.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Areas/AdminArea/Views/Category/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXENhdGVnb3J5XERldGFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Areas/AdminArea/Views/Category/Edit.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Areas/AdminArea/Views/Category/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXENhdGVnb3J5XEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Areas/AdminArea/Views/Category/Index.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Areas/AdminArea/Views/Category/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXENhdGVnb3J5XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Areas/AdminArea/Views/Dashboard/Index.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Areas/AdminArea/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXERhc2hib2FyZFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Areas/AdminArea/Views/Demo/Create.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Areas/AdminArea/Views/Demo/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXERlbW9cQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Areas/AdminArea/Views/Product/Create.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Areas/AdminArea/Views/Product/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXFByb2R1Y3RcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Areas/AdminArea/Views/Product/Index.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Areas/AdminArea/Views/Product/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXFByb2R1Y3RcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Areas/AdminArea/Views/Role/Create.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Areas/AdminArea/Views/Role/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXFJvbGVcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Areas/AdminArea/Views/Role/Index.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Areas/AdminArea/Views/Role/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXFJvbGVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXFNoYXJlZFxfQWRtaW5MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Areas/AdminArea/Views/Shared/_ValidationPartial.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Areas/AdminArea/Views/Shared/_ValidationPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXFNoYXJlZFxfVmFsaWRhdGlvblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Areas/AdminArea/Views/Slider/Create.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Areas/AdminArea/Views/Slider/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXFNsaWRlclxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Areas/AdminArea/Views/Slider/Edit.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Areas/AdminArea/Views/Slider/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXFNsaWRlclxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Areas/AdminArea/Views/Slider/Index.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Areas/AdminArea/Views/Slider/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXFNsaWRlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Areas/AdminArea/Views/User/Detail.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Areas/AdminArea/Views/User/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXFVzZXJcRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Areas/AdminArea/Views/User/EditRole.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Areas/AdminArea/Views/User/EditRole.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXFVzZXJcRWRpdFJvbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Areas/AdminArea/Views/User/Index.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Areas/AdminArea/Views/User/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXFVzZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Areas/AdminArea/Views/_ViewImports.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Areas/AdminArea/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Areas/AdminArea/Views/_ViewStart.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Areas/AdminArea/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Views/Account/ForgetPassword.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Views/Account/ForgetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3JnZXRQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Views/Account/Login.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Views/Account/Register.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Views/Account/ResetPassword.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Views/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Views/Account/VerifyEmail.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Views/Account/VerifyEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxWZXJpZnlFbWFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Views/Basket/ShowBasket.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Views/Basket/ShowBasket.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFza2V0XFNob3dCYXNrZXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Views/Blog/Detail.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Views/Blog/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Views/Blog/Index.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Views/Blog/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Views/Demo/Index.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Views/Demo/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVtb1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Views/Home/Index.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Views/Product/Index.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Views/Product/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Views/Product/_ProductLoadMorePartial.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Views/Product/_ProductLoadMorePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxfUHJvZHVjdExvYWRNb3JlUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Views/Sale/Index.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Views/Sale/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Views/Shared/Components/Header/Default.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Views/Shared/Components/Header/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcSGVhZGVyXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Views/Shared/Components/Product/Default.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Views/Shared/Components/Product/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUHJvZHVjdFxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Views/Shared/_SearchPartial.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Views/Shared/_SearchPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TZWFyY2hQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Views/_ViewImports.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Views/_ViewStart.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-15 Email/FrontToBack/FrontToBack/Views/Shared/_Layout.cshtml]
+[C:/Users/asus/OneDrive/Desktop/Code Academy/Backend/Task-16 SignalR/FrontToBack/FrontToBack/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-q4mdq0irkg
