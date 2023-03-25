@@ -6,6 +6,7 @@ namespace FrontToBack.Models
     {
         public string Fullname { get; set; }
         public bool IsActive { get; set; }
+        public string? ConnectionId { get; set; }
         public List<Sales> Sales { get; set; }
         public List<Comment> Comments { get; set; }
     }
