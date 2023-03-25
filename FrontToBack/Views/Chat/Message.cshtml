@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "Message";
+}
+
+
+<div class="container">
+    <div class="row p-1">
+        <div class="col-1">User</div>
+        <div class="col-5"><input type="text" id="userInput" /></div>
+    </div>
+    <div class="row p-1">
+        <div class="col-1">Message</div>
+        <div class="col-5"><input type="text" class="w-100" id="messageInput" /></div>
+    </div>
+    <div class="row p-1">
+        <div class="col-6 text-end">
+            <input type="button" id="sendButton" value="Send Message" />
+        </div>
+    </div>
+    <div class="row p-1">
+        <div class="col-6">
+            <hr />
+        </div>
+    </div>
+    <div class="row p-1">
+        <div class="col-6">
+            <ul id="messagesList"></ul>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.4/signalr.min.js" integrity="sha512-ulHhwQdGlX96gNSRsakG06STFdaQBUTbCX4KqLcYI428blEsttMkg2C3n2KtiYNDwnETBHXDg9ZAtvkfMHTYOQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var connection = new signalR.HubConnectionBuilder().withUrl("/chat").build();
+        connection.start();
+
+
+        document.getElementById("sendButton").onclick = function () {
+            let userValue = document.getElementById("userInput").value;
+            let messageValue = document.getElementById("messageInput").value;
+
+            connection.invoke("SendMessage", userValue, messageValue);
+        };
+
+        connection.on("ReceiveMessage", function (user, message) {
+            //alert(`user: ${user} ,message: ${message}`);
+            console.log("Hellooooooooo");
+        })
+
+        
+
+    </script>
+
+
+
+}
