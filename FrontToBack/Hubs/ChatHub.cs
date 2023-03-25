@@ -25,10 +25,22 @@ namespace FrontToBack.Hubs
                 user.ConnectionId = Context.ConnectionId;
                 var result = _userManager.UpdateAsync(user).Result;
 
-                await Clients.All.SendAsync("UserOnline", $"{user.Id} li user connect oldu" );
+                await Clients.All.SendAsync("UserOnline",user.Id);
 
             }
             return base.OnConnectedAsync();
+        }
+
+        public override async Task<Task> OnDisconnectedAsync(Exception? exception)
+        {
+            if (Context.User.Identity.IsAuthenticated)
+            {
+                AppUser user = _userManager.FindByNameAsync(Context.User.Identity.Name).Result;
+                user.ConnectionId = null;
+                var result = _userManager.UpdateAsync(user).Result;
+                await Clients.All.SendAsync("UserOffline", user.Id);
+            }
+            return base.OnDisconnectedAsync(exception);
         }
     }
 }

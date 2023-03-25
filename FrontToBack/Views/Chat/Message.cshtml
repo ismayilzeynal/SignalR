@@ -36,7 +36,7 @@
                 @foreach (AppUser item in ViewBag.Users)
                 {
                     <li class="list-group-item">
-                        <span class="@(item.ConnectionId!=null?"bg-online":"bg-offline")" style="display:inline-block; width:10px; height: 10px; border-radius:50%;" ></span>  @item.Fullname</li>
+                        <span id="@item.Id" class="@(item.ConnectionId!=null?"bg-online":"bg-offline")" style="display:inline-block; width:10px; height: 10px; border-radius:50%;" ></span>  @item.Fullname</li>
                 }
                 
             </ul>
@@ -62,9 +62,14 @@
         };
 
         connection.on("UserOnline", function(userId) {
-            console.log(`${userId}`);
+            document.getElementById(userId).classList.remove("bg-offline");
+            document.getElementById(userId).classList.add("bg-online");
         })
 
+        connection.on("UserOffline", function(userId) {
+            document.getElementById(userId).classList.remove("bg-online");
+            document.getElementById(userId).classList.add("bg-offline");
+        })
 
 
     </script>
