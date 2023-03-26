@@ -35,11 +35,11 @@
             <ul class="list-group">
                 @foreach (AppUser item in ViewBag.Users)
                 {
-                    <li class="list-group-item">
-                        <a asp-controller="chat" asp-action="showAlert" asp-route-UserId="@item.Id">Show Alert</a>
+                    <li class="list-group-item" style="padding-left: 30px;">
+                       @* <a asp-controller="chat" asp-action="showAlert" asp-route-UserId="@item.Id">Select for Send</a>*@
+                        <input class="form-check-input users-value" type="checkbox" value="@item.Id" >
                         <span id="@item.Id" class="@(item.ConnectionId!=null?"bg-online":"bg-offline")" style="display:inline-block; width:10px; height: 10px; border-radius:50%;" ></span>  @item.Fullname</li>
                 }
-                
             </ul>
         </div>
     </div>
@@ -54,13 +54,30 @@
         var connection = new signalR.HubConnectionBuilder().withUrl("/chat").build();
         connection.start();
 
+        // simple version
+        //document.getElementById("sendButton").onclick = function () {
+        //    let userValue = document.getElementById("userInput").value;
+        //    let messageValue = document.getElementById("messageInput").value;
 
+        //    connection.invoke("SendMessage", userValue, messageValue);
+        //};
+
+        // group or single message possibility
         document.getElementById("sendButton").onclick = function () {
-            let userValue = document.getElementById("userInput").value;
             let messageValue = document.getElementById("messageInput").value;
-
-            connection.invoke("SendMessage", userValue, messageValue);
+            let userValue = document.getElementById("userInput").value;
+            let usersList = [];
+            document.querySelectorAll(".users-value").forEach(function(item){
+                if(item.checked)
+                    usersList.push(item.value);
+            });
+            connection.invoke("SendMessage2", usersList, userValue, messageValue);
         };
+
+        // recieve-2 new
+        connection.on("ReceiveMessage2", function (user, message) {
+            console.log("hello");
+        })
 
         connection.on("UserOnline", function(userId) {
             document.getElementById(userId).classList.remove("bg-offline");

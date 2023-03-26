@@ -12,9 +12,20 @@ namespace FrontToBack.Hubs
         {
             _userManager = userManager;
         }
-        public async Task SendMessage(string user, string message)
+
+        
+        public async Task SendMessage(string user, string message) // old version
         {
-            await Clients.All.SendAsync("ReceiveMessage",user, message);
+            await Clients.All.SendAsync("ReceiveMessage", user, message);
+        }
+
+        public async Task SendMessage2(string[] users, string user, string message)
+        {
+            foreach (var item in users)
+            {
+                AppUser User = await _userManager.FindByIdAsync(item);
+                await Clients.Client(User.ConnectionId).SendAsync("ReceiveMessage2", user, message);
+            }
         }
 
         public override async Task<Task> OnConnectedAsync()

@@ -23,9 +23,6 @@ namespace FrontToBack.Controllers
         public IActionResult Message()
         {
             ViewBag.Users = _userManager.Users.ToList();
-
-
-
             return View();
         }
 
@@ -38,6 +35,3 @@ namespace FrontToBack.Controllers
         }
     }
 }
-
-
-// Ders tapsirigi bu commite qeder idi. Bundan sonrasi elave islerdi
