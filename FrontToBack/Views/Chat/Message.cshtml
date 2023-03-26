@@ -7,26 +7,16 @@
     <div class="row">
         <div class="col-6">
             <div class="row p-1">
-                <div class="col-1">User</div>
+                <div class="col-2">User</div>
                 <div class="col-5"><input type="text" id="userInput" /></div>
             </div>
             <div class="row p-1">
-                <div class="col-1">Message</div>
+                <div class="col-2">Message</div>
                 <div class="col-5"><input type="text" class="w-100" id="messageInput" /></div>
             </div>
             <div class="row p-1">
                 <div class="col-6 text-end">
                     <input type="button" id="sendButton" value="Send Message" />
-                </div>
-            </div>
-            <div class="row p-1">
-                <div class="col-6">
-                    <hr />
-                </div>
-            </div>
-            <div class="row p-1">
-                <div class="col-6">
-                    <ul id="messagesList"></ul>
                 </div>
             </div>
         </div>
@@ -52,6 +42,20 @@
                     }
                 }
             </ul>
+        </div>
+        <div class="col-6">
+            <div class="col-12 mx-auto">
+                <hr class="bg-warning" />
+                <h4 class="alert alert-warning text-center">
+                    Messages
+                </h4>
+                <hr class="bg-warning" />
+            </div>
+            <div class="col-12 mx-auto">
+                <ul class="list-group list-group-flush" id="message-section">
+                    
+                </ul>
+            </div>
         </div>
     </div>
 
@@ -79,7 +83,7 @@
             let userValue = document.getElementById("userInput").value;
             let usersList = [];
             document.querySelectorAll(".users-value").forEach(function (item) {
-                if (item.checked)
+                if (item.checked) // yuksek guvenlik ucun value-u "null or empty" ile yoxlamaq meslehetdi + back terefde de yoxlamaq
                     usersList.push(item.value);
             });
             connection.invoke("SendMessage2", usersList, userValue, messageValue);
@@ -87,7 +91,19 @@
 
         // recieve-2 new
         connection.on("ReceiveMessage2", function (user, message) {
-            console.log("hello");
+            let messageSection = document.getElementById("message-section");
+            let addingMessage =
+            `
+                <li class="list-group-item"><span class="rounded text-primary">${user}-->&nbsp&nbsp</span>${message}</li>
+            `;
+            /// Userin kimliyini tapib onun ozu olduqda sagdan yasil olmadiqda soldan mavi yazdirmaq olardi. uzundu deye yazmadim numune:
+            //      if(...)
+            //      <li class="list-group-item" > <span class="rounded text-primary" > Username-- >& nbsp & nbsp < /span>Salam, necəsiniz?</li >
+            //      else
+            //      <li class="list-group-item text-right" > <span class="rounded text-success float-right" > & nbsp & nbsp < --Username < /span> Salam, necəsiniz? </li >
+            
+                messageSection.innerHTML = messageSection.innerHTML + addingMessage;
+
         })
 
         connection.on("UserOnline", function (userId) {
