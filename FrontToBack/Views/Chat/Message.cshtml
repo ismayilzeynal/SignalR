@@ -35,10 +35,21 @@
             <ul class="list-group">
                 @foreach (AppUser item in ViewBag.Users)
                 {
-                    <li class="list-group-item" style="padding-left: 30px;">
-                       @* <a asp-controller="chat" asp-action="showAlert" asp-route-UserId="@item.Id">Select for Send</a>*@
-                        <input class="form-check-input users-value" type="checkbox" value="@item.Id" >
-                        <span id="@item.Id" class="@(item.ConnectionId!=null?"bg-online":"bg-offline")" style="display:inline-block; width:10px; height: 10px; border-radius:50%;" ></span>  @item.Fullname</li>
+                    @* <a asp-controller="chat" asp-action="showAlert" asp-route-UserId="@item.Id">Select for Send</a>*@
+                    @if (item.ConnectionId != null)
+                    {
+                        <li class="list-group-item" style="padding-left: 30px;">
+                            <input class="form-check-input users-value" type="checkbox" value="@item.Id">
+                            <span id="@item.Id" class="bg-online" style="display:inline-block; width:10px; height: 10px; border-radius:50%;"></span>  @item.Fullname
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="list-group-item" style="padding-left: 30px;">
+                            <input class="form-check-input users-value" type="checkbox" value="@item.Id" disabled>
+                            <span id="@item.Id" class="bg-offline" style="display:inline-block; width:10px; height: 10px; border-radius:50%;"></span>  @item.Fullname
+                        </li>
+                    }
                 }
             </ul>
         </div>
@@ -67,8 +78,8 @@
             let messageValue = document.getElementById("messageInput").value;
             let userValue = document.getElementById("userInput").value;
             let usersList = [];
-            document.querySelectorAll(".users-value").forEach(function(item){
-                if(item.checked)
+            document.querySelectorAll(".users-value").forEach(function (item) {
+                if (item.checked)
                     usersList.push(item.value);
             });
             connection.invoke("SendMessage2", usersList, userValue, messageValue);
@@ -79,12 +90,12 @@
             console.log("hello");
         })
 
-        connection.on("UserOnline", function(userId) {
+        connection.on("UserOnline", function (userId) {
             document.getElementById(userId).classList.remove("bg-offline");
             document.getElementById(userId).classList.add("bg-online");
         })
 
-        connection.on("UserOffline", function(userId) {
+        connection.on("UserOffline", function (userId) {
             document.getElementById(userId).classList.remove("bg-online");
             document.getElementById(userId).classList.add("bg-offline");
         })
