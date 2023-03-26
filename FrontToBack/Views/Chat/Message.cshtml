@@ -104,11 +104,13 @@
         connection.on("UserOnline", function (userId) {
             document.getElementById(userId).classList.remove("bg-offline");
             document.getElementById(userId).classList.add("bg-online");
+            document.querySelector(`[value="${userId}"]`).disabled = false;
         })
 
         connection.on("UserOffline", function (userId) {
             document.getElementById(userId).classList.remove("bg-online");
             document.getElementById(userId).classList.add("bg-offline");
+            document.querySelector(`[value="${userId}"]`).disabled = true;
         })
 
         connection.on("ShowAlert", function (message) {
