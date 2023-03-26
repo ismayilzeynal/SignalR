@@ -38,3 +38,6 @@ namespace FrontToBack.Controllers
         }
     }
 }
+
+
+// Ders tapsirigi bu commite qeder idi. Bundan sonrasi elave islerdi
