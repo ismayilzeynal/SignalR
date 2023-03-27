@@ -3,11 +3,7 @@ using FrontToBack.Models;
 using FrontToBack.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Net.Mail;
-using MailKit.Net.Smtp;
-using MailKit.Security;
-using MimeKit;
-using MimeKit.Text;
+using FrontToBack.Services.Email;
 
 namespace FrontToBack.Controllers
 {
@@ -16,11 +12,16 @@ namespace FrontToBack.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
-        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, RoleManager<IdentityRole> roleManager)
+        private readonly ICreateEmailFile _createEmailFile;
+        private readonly IEmailSend _emailSend;
+
+        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, RoleManager<IdentityRole> roleManager, ICreateEmailFile createEmailFile, IEmailSend emailSend)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
+            _createEmailFile = createEmailFile;
+            _emailSend = emailSend;
         }
 
         public IActionResult Register()
@@ -28,8 +29,7 @@ namespace FrontToBack.Controllers
             return View();
         }
 
-        [HttpPost]
-        [AutoValidateAntiforgeryToken]
+        [HttpPost][AutoValidateAntiforgeryToken]
         public async Task<IActionResult> Register(RegisterVM registerVM)
         {
             if (!ModelState.IsValid) return View(registerVM);
@@ -56,30 +56,14 @@ namespace FrontToBack.Controllers
             string link = Url.Action(nameof(ConfirmEmail), "Account", new { userId = user.Id, token },
                 Request.Scheme, Request.Host.ToString());
 
-
-            // create email message
-            var email = new MimeMessage();
-            email.From.Add(MailboxAddress.Parse("ismayilbz@code.edu.az"));
-            email.To.Add(MailboxAddress.Parse(user.Email));
-            email.Subject = "Verify Email";
-
             string body = string.Empty;
-            using (StreamReader reader = new StreamReader("wwwroot/Template/Verify.html"))
-            {
-                body = reader.ReadToEnd();
-            }
+            string FilePath = "wwwroot/Template/Verify.html";
 
+            body = _createEmailFile.CreateFile(FilePath, body);
             body = body.Replace("{{link}}", link);
             body = body.Replace("{{Fullname}}", user.Fullname);
-            email.Body = new TextPart(TextFormat.Html) { Text = body };
 
-            // send email
-            using var smtp = new MailKit.Net.Smtp.SmtpClient();
-            smtp.Connect("smtp.gmail.com", 587, SecureSocketOptions.StartTls);  //465 for gmail new
-            smtp.Authenticate("ismayilbz@code.edu.az", "apaswqtxbhcriskl");
-            smtp.Send(email);
-            smtp.Disconnect(true);
-
+            _emailSend.Send(user.Email, "Verify Registration", body); // to user.Email
             return RedirectToAction(nameof(VerifyEmail));
         }
 
@@ -165,7 +149,6 @@ namespace FrontToBack.Controllers
                     await _roleManager.CreateAsync(new IdentityRole { Name = item.ToString() });
                 }
             }
-
             return Content("role added");
         }
 
@@ -191,31 +174,15 @@ namespace FrontToBack.Controllers
             string link = Url.Action(nameof(ResetPassword), "Account", new { userId = exsistUser.Id, token },
                 Request.Scheme, Request.Host.ToString());
 
-            // create email message
-            var email = new MimeMessage();
-            email.From.Add(MailboxAddress.Parse("ismayilbz@code.edu.az"));
-            email.To.Add(MailboxAddress.Parse(exsistUser.Email));
-            email.Subject = "Verify reset password Email";
             string body = string.Empty;
-            using (StreamReader reader = new StreamReader("wwwroot/Template/Verify.html"))
-            {
-                body = reader.ReadToEnd();
-            }
+            string FilePath = "wwwroot/Template/Verify.html";
+            body = _createEmailFile.CreateFile(FilePath, body);
             body = body.Replace("{{link}}", link);
             body = body.Replace("{{Fullname}}", exsistUser.Fullname);
-            email.Body = new TextPart(TextFormat.Html) { Text = body };
 
-            // send email
-            using var smtp = new MailKit.Net.Smtp.SmtpClient();
-            smtp.Connect("smtp.gmail.com", 587, SecureSocketOptions.StartTls);  //465
-            smtp.Authenticate("ismayilbz@code.edu.az", "apaswqtxbhcriskl");
-            smtp.Send(email);
-            smtp.Disconnect(true);
-
+            _emailSend.Send(exsistUser.Email, "Reset Password", body);
             return RedirectToAction(nameof(VerifyEmail));
         }
-
-
 
         public async Task<IActionResult> ResetPassword(string userId, string token)
         {

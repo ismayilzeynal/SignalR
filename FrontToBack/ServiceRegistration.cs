@@ -2,6 +2,7 @@
 using FrontToBack.Helpers;
 using FrontToBack.Models;
 using FrontToBack.Services.Basket;
+using FrontToBack.Services.Email;
 using FrontToBack.Services.Product;
 using Microsoft.AspNetCore.Identity;
 
@@ -18,6 +19,9 @@ namespace FrontToBack
             services.AddHttpContextAccessor();
             services.AddScoped<IBasketProductCount, BasketProductCount>();
             services.AddScoped<IProductGet, ProductGet>();
+            services.AddScoped<ICreateEmailFile, CreateEmailFile>();
+            services.AddScoped<IEmailSend, EmailSend>();
+
             services.AddIdentity<AppUser, IdentityRole>(options=>
             {
                 options.Password.RequiredLength = 6;
