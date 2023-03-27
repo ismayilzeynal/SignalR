@@ -30,7 +30,6 @@ namespace FrontToBack.Controllers
         {
             AppUser user = await _userManager.FindByIdAsync(UserId);
             _hubContext.Clients.Client(user.ConnectionId).SendAsync("ShowAlert", "hello");
-            // _hubContext.Clients.Clients() // toplu, qrup
             return RedirectToAction("message");
         }
     }

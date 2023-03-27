@@ -23,7 +23,6 @@ namespace FrontToBack.Hubs
 
         public async Task SendMessage2(string[] users, string message)
         {
-
             foreach (var item in users)
             {
                 AppUser User = await _userManager.FindByIdAsync(item);

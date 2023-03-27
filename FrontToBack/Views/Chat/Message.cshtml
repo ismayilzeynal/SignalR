@@ -2,7 +2,6 @@
     ViewData["Title"] = "Message";
 }
 
-
 <div class="container">
     <div class="row">
         <div class="col-6">
@@ -21,7 +20,6 @@
             <ul class="list-group">
                 @foreach (AppUser item in ViewBag.Users)
                 {
-                    @* <a asp-controller="chat" asp-action="showAlert" asp-route-UserId="@item.Id">Select for Send</a>*@
                     @if (item.ConnectionId != null)
                     {
                         <li class="list-group-item" style="padding-left: 30px;">
@@ -64,26 +62,18 @@
         var connection = new signalR.HubConnectionBuilder().withUrl("/chat").build();
         connection.start();
 
-        // simple version
-        //document.getElementById("sendButton").onclick = function () {
-        //    let userValue = document.getElementById("userInput").value;
-        //    let messageValue = document.getElementById("messageInput").value;
 
-        //    connection.invoke("SendMessage", userValue, messageValue);
-        //};
-
-        // group or single message possibility
-        document.getElementById("sendButton").onclick = function () {
-            let messageValue = document.getElementById("messageInput").value;
+        document.getElementById("sendButton").onclick = function () 
+        {
             let usersList = [];
-            document.querySelectorAll(".users-value").forEach(function (item) {
-                if (item.checked) // yuksek guvenlik ucun value-u "null or empty" ile yoxlamaq meslehetdi + back terefde de yoxlamaq
-                    usersList.push(item.value);
+            let messageValue = document.getElementById("messageInput").value;
+            document.querySelectorAll(".users-value").forEach(function (item){
+                if (item.checked) 
+                usersList.push(item.value);
             });
             connection.invoke("SendMessage2", usersList, messageValue);
         };
 
-        // recieve-2 new
         connection.on("ReceiveMessage2", function (user, message, selfMessage) {
             let messageSection = document.getElementById("message-section");
             let addingMessage ="";
@@ -100,7 +90,6 @@
                     `;
             }
             messageSection.innerHTML = messageSection.innerHTML + addingMessage;
-
         })
 
         connection.on("UserOnline", function (userId) {

@@ -28,8 +28,6 @@ namespace FrontToBack.Controllers
             return View();
         }
 
-
-        // confirmation olmadan da login alinir. cixis yolu kimi isActive istifade etmek olar en son variantda
         [HttpPost]
         [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> Register(RegisterVM registerVM)
@@ -42,12 +40,9 @@ namespace FrontToBack.Controllers
                 UserName = registerVM.Username,
                 Email = registerVM.Email,
                 IsActive = true
-
-
             };
 
             IdentityResult result = await _userManager.CreateAsync(user, registerVM.Password);
-
             if (!result.Succeeded)
             {
                 foreach (var item in result.Errors)
@@ -58,7 +53,6 @@ namespace FrontToBack.Controllers
             }
 
             string token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-
             string link = Url.Action(nameof(ConfirmEmail), "Account", new { userId = user.Id, token },
                 Request.Scheme, Request.Host.ToString());
 
@@ -77,21 +71,16 @@ namespace FrontToBack.Controllers
 
             body = body.Replace("{{link}}", link);
             body = body.Replace("{{Fullname}}", user.Fullname);
-
             email.Body = new TextPart(TextFormat.Html) { Text = body };
 
             // send email
             using var smtp = new MailKit.Net.Smtp.SmtpClient();
-            smtp.Connect("smtp.gmail.com", 587, SecureSocketOptions.StartTls);  //465
+            smtp.Connect("smtp.gmail.com", 587, SecureSocketOptions.StartTls);  //465 for gmail new
             smtp.Authenticate("ismayilbz@code.edu.az", "apaswqtxbhcriskl");
             smtp.Send(email);
             smtp.Disconnect(true);
 
-
             return RedirectToAction(nameof(VerifyEmail));
-
-            // add role
-            // await _userManager.AddToRoleAsync(user, RoleEnums.Admin.ToString());
         }
 
         public async Task<IActionResult> ConfirmEmail(string userId, string token)
@@ -110,12 +99,11 @@ namespace FrontToBack.Controllers
             return View();
         }
 
-
-
         public IActionResult Login()
         {
             return View();
         }
+
         [HttpPost]
         [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> Login(LoginVM login, string? ReturnUrl)
@@ -125,7 +113,6 @@ namespace FrontToBack.Controllers
             if (user == null)
             {
                 user = await _userManager.FindByNameAsync(login.UsernameOrEmail);
-
                 if (user == null || !user.EmailConfirmed)       // elave  email confirmed serti verdim, yoxsa confirmed olmadan da daxil olurdu. Confirm your mail de ayrica modelstate yazmaq olardi eslinde
                 {
                     ModelState.AddModelError("", "Username or Password invalid");
@@ -138,7 +125,6 @@ namespace FrontToBack.Controllers
                 return View(login);
             }
             var result = await _signInManager.PasswordSignInAsync(user, login.Password, login.RememberMe, true);
-
             if (result.IsLockedOut)
             {
                 ModelState.AddModelError("", "Your account locked");
@@ -149,25 +135,19 @@ namespace FrontToBack.Controllers
                 ModelState.AddModelError("", "Username or Password invalid");
                 return View(login);
             }
-
-
-
             // sign in
             if (await _userManager.IsInRoleAsync(user, RoleEnums.Admin.ToString()))
             {
                 return RedirectToAction("index", "dashboard", new { Area = "AdminArea" });
             }
-
             if (ReturnUrl != null)
             {
                 return Redirect(ReturnUrl);
             }
 
             await _signInManager.SignInAsync(user, isPersistent: true);
-
             return RedirectToAction("index", "home");
         }
-
 
 
         public async Task<IActionResult> Logout()
@@ -194,10 +174,6 @@ namespace FrontToBack.Controllers
         {
             return View();
         }
-
-
-
-
 
 
         [HttpPost]
