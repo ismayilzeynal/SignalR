@@ -49,7 +49,6 @@
             </div>
             <div class="col-12 mx-auto">
                 <ul class="list-group list-group-flush" id="message-section">
-                    
                 </ul>
             </div>
         </div>
@@ -85,19 +84,22 @@
         };
 
         // recieve-2 new
-        connection.on("ReceiveMessage2", function (user, message) {
+        connection.on("ReceiveMessage2", function (user, message, selfMessage) {
             let messageSection = document.getElementById("message-section");
-            let addingMessage =
-            `
-                <li class="list-group-item"><span class="rounded text-primary">${user}-->&nbsp&nbsp</span>${message}</li>
-            `;
-            /// Userin kimliyini tapib onun ozu olduqda sagdan yasil olmadiqda soldan mavi yazdirmaq olardi. uzundu deye yazmadim numune:
-            //      if(...)
-            //      <li class="list-group-item" > <span class="rounded text-primary" > Username-- >& nbsp & nbsp < /span>Salam, necəsiniz?</li >
-            //      else
-            //      <li class="list-group-item text-right" > <span class="rounded text-success float-right" > & nbsp & nbsp < --Username < /span> Salam, necəsiniz? </li >
-            
-                messageSection.innerHTML = messageSection.innerHTML + addingMessage;
+            let addingMessage ="";
+            if (selfMessage) {
+                addingMessage =
+                    `
+                        <li class="list-group-item text-right"> <span class="rounded text-success float-right"> &nbsp&nbsp<-- Me </span> ${message} </li>
+                    `;
+            }
+            else {
+                addingMessage =
+                    `
+                        <li class="list-group-item"> <span class="rounded text-primary"> ${user} --> &nbsp&nbsp </span> ${message} </li>
+                    `;
+            }
+            messageSection.innerHTML = messageSection.innerHTML + addingMessage;
 
         })
 

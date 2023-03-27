@@ -27,7 +27,11 @@ namespace FrontToBack.Hubs
             foreach (var item in users)
             {
                 AppUser User = await _userManager.FindByIdAsync(item);
-                await Clients.Client(User.ConnectionId).SendAsync("ReceiveMessage2", Context.User.Identity.Name, message); //user
+                string thisUsername = Context.User.Identity.Name;
+                if(thisUsername==User.UserName)
+                    await Clients.Client(User.ConnectionId).SendAsync("ReceiveMessage2", thisUsername, message, true);
+                else
+                    await Clients.Client(User.ConnectionId).SendAsync("ReceiveMessage2", thisUsername, message, false);
             }
         }
 
